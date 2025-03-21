@@ -106,41 +106,31 @@ void IniciarSimulacion()
 
 	int segundosTranscurridos = 0;
 
-	while (cantidadGas > 0)
+	while (cantidadGas > 0 && !liquidoHirviendo)
 	{
 		Console.WriteLine($"\n=== Segundo {segundosTranscurridos + 1} ===");
 
-		// Si el líquido ya hirvió, detener consumo de gas
-		if (!liquidoHirviendo)
-		{
-			cantidadGas -= caudalEnGalonesPorSegundo;
-
-			if (cantidadGas < 0)
-				cantidadGas = 0;
-		}
+		cantidadGas -= caudalEnGalonesPorSegundo;
+		if (cantidadGas < 0)
+			cantidadGas = 0;
 
 		Console.WriteLine($"Gas restante: {cantidadGas:F2} galones");
-		Console.WriteLine($"Caudal actual: {(liquidoHirviendo ? 0 : caudalEnGalonesPorSegundo):F2} galones/segundo");
+		Console.WriteLine($"Caudal actual: {caudalEnGalonesPorSegundo:F2} galones/segundo");
 		MostrarBarraDeGas();
 
-		if (segundosTranscurridos >= tiempoHervor && !liquidoHirviendo)
+		if (segundosTranscurridos >= tiempoHervor)
 		{
 			Console.WriteLine($"\n¡El {liquido} ha comenzado a hervir!");
-			liquidoHirviendo = true;
-			Console.WriteLine("🔥 El gas se ha detenido para conservarlo.");
-		}
-
-		if (liquidoHirviendo)
-		{
-			Console.WriteLine("El líquido sigue hirviendo, pero no se consume más gas.");
+			Console.WriteLine("🔥 Deteniendo simulación...");
+			break; // Se detiene la simulación
 		}
 
 		segundosTranscurridos++;
-
 		System.Threading.Thread.Sleep(1000);
 	}
 
 	Console.WriteLine("\n¡Fin de la simulación!");
+
 }
 
 void MostrarBarraDeGas()
