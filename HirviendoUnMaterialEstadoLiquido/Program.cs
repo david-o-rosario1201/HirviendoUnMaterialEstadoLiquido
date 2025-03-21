@@ -75,7 +75,7 @@ void IniciarSimulacion()
 
 	double diametroAMetro = diametro * 0.0254;
 	caudal = ((Math.PI * Math.Pow(diametroAMetro, 2)) / 4) * velocidad;
-	double caudalEnGalonesPorSegundo = caudal * 264.172;
+	double caudalEnGalonesPorSegundo = caudal * 264.172; //de m^3 a galones
 
 	if (caudalEnGalonesPorSegundo <= 0)
 	{
@@ -93,8 +93,14 @@ void IniciarSimulacion()
 	double puntoEbullicion = (liquido == "agua") ? 100.0 : 230.0; // °C
 	double temperaturaInicial = 25.0; // Suponemos temperatura ambiente
 
+	//cantidadLiquido esta en litros, se multiplica por 1000 para llevar a mililitros
+	//y luego por densidadLiquido para llegar a gramos
 	double masaLiquido = cantidadLiquido * 1000 * densidadLiquido; // en gramos
+
+	//Q=m⋅c⋅ΔT
 	double energiaNecesaria = masaLiquido * calorEspecifico * (puntoEbullicion - temperaturaInicial); // en J
+
+	//Empieza en 5000 J, por cada potencia aumenta 8000
 	double potenciaEstufa = 5000 + (manubrio * 8000); // J/s
 	double tiempoHervorSegundos = energiaNecesaria / potenciaEstufa;
 	int tiempoHervor = (int)Math.Ceiling(tiempoHervorSegundos);
