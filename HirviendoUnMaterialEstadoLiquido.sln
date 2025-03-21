@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HirviendoUnMaterialEstadoLiquido", "HirviendoUnMaterialEstadoLiquido\HirviendoUnMaterialEstadoLiquido.csproj", "{3FEA80C2-FA3D-4E8E-BABF-0D2ADB28B6B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FEA80C2-FA3D-4E8E-BABF-0D2ADB28B6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEA80C2-FA3D-4E8E-BABF-0D2ADB28B6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEA80C2-FA3D-4E8E-BABF-0D2ADB28B6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FEA80C2-FA3D-4E8E-BABF-0D2ADB28B6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {162B3725-5AA9-4971-B507-B5B52926116A}
+	EndGlobalSection
+EndGlobal
